@@ -1,16 +1,14 @@
-﻿list<string> lista = new list<string>;
-int contador = 1;
-
-void lista()
+﻿void cadastro()
 {
 
-    foreach (var i in lista)
-    {
+    Console.WriteLine("Digite o nome:");
+    nomeCadastro = Console.ReadLine();
 
-        Console.WriteLine(lista[contador]);
-        contador++;
-    }
+    Console.WriteLine("Digite a idade:");
+    nomeIdade = Console.ReadLine();
 
+    lista[contador] = (nomeCadastro, nomeIdade);
 
-
+    contador++;
+    
 }
