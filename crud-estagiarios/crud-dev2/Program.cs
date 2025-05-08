@@ -56,4 +56,50 @@ void menu()
     }
 }    
 
-menu();
+void Editar()
+{
+    if (items.Count == 0)
+    {
+        Console.WriteLine("Nenhum jogo para ser editado!");
+        return;
+    }
+    Console.WriteLine("===== SUA LISTA =====");
+    Console.WriteLine();
+    int i = 0;
+    foreach (var item in items)
+    {
+        Console.WriteLine($"[{i}] - {item}");
+        i++;
+    }
+    Console.WriteLine("");
+    Console.WriteLine("Digite a posição do jogo que deseja editar:");
+    if (int.TryParse(Console.ReadLine(), out int indice) && indice >= 0 && indice < items.Count)
+    {
+        Console.WriteLine("Digite o novo nome:");
+        string novoNome = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(novoNome)) 
+        {
+            Console.Clear();
+            items[indice] = novoNome;
+            Console.WriteLine("Lista atualizada!");
+            Thread.Sleep(500);
+            Console.Clear();
+            return;
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Digite uma resposta válida!");
+            Thread.Sleep(500);
+            Console.Clear();
+        }    
+    }
+    else
+    {
+        Console.Clear();
+        Console.WriteLine("Posição inválida!");
+        Thread.Sleep(500);
+        Console.Clear();   
+    }
+}
+
