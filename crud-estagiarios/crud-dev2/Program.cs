@@ -60,7 +60,7 @@ void Editar()
 {
     if (items.Count == 0)
     {
-        Console.WriteLine("Nenhum jogo para ser editado!");
+        Console.WriteLine("Nenhum item para ser editado!");
         return;
     }
     Console.WriteLine("===== SUA LISTA =====");
@@ -72,7 +72,7 @@ void Editar()
         i++;
     }
     Console.WriteLine("");
-    Console.WriteLine("Digite a posição do jogo que deseja editar:");
+    Console.WriteLine("Digite a posição do item que deseja editar:");
     if (int.TryParse(Console.ReadLine(), out int indice) && indice >= 0 && indice < items.Count)
     {
         Console.WriteLine("Digite o novo nome:");
