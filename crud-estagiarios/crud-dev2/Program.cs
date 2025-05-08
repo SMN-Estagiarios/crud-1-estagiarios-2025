@@ -103,3 +103,48 @@ void Editar()
     }
 }
 
+void Remover()
+{
+    if (items.Count == 0)
+        {
+            Console.WriteLine("Nenhum item para remover!");
+            Thread.Sleep(1000);
+            Console.Clear();
+            return;
+        }
+        Console.WriteLine("===== SUA LISTA =====");
+        Console.WriteLine();
+        int i = 0;
+        foreach (var item in items)
+        {
+            Console.WriteLine($"[{i}] - {item}");
+            i++;
+        }
+        Console.WriteLine();
+        Console.WriteLine("Informe a posição da despesa que deseja remover:");
+        if (int.TryParse(Console.ReadLine(), out int indice) && indice >= 0 && indice < items.Count)
+        {
+            items.RemoveAt(posicao);
+            Console.Clear();
+            Console.WriteLine("Despesa removida!");
+            Thread.Sleep(500);
+            Console.Clear();
+            return;
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Posição inválida!");
+            Thread.Sleep(500);
+            Console.Clear();
+        }
+
+
+
+
+
+
+
+
+
+}
